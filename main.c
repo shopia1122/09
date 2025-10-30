@@ -5,21 +5,29 @@
 
 int main(int argc, char *argv[])
 {
-  //SIZE명의 학생에 대한 시험 점수 저장 배열 선언 
+  //SIZE 크기 배열 선언   
+  int grade[SIZE]; 
   int score[SIZE];   
-  int i;         // 점수를 출력하기 위한 변수 선언    
-  int avg;
-  int sum=0;   //누적을 위한 변수는 무조건 초기화 시켜줘야 한다. 안해서 평균이 계속 1234567이 나옴.  
+  int i;            
   
-  for(i=0;i<SIZE;i++) {
-  printf("학생 성적을 입력하세요: ");
-  scanf("%d", &score[i]);
-  sum += score[i];
-}
+  for(i=0;i<SIZE;i++) 
+  {
+   grade[i] = rand()%100;
+  }
   
-  avg = sum/SIZE;
-  printf("성적 평균: %d\n", avg); 
+   for(i=0;i<SIZE;i++)    //배열도 반복해서 같다고 두어야 한다.  
+  {
+   score[i] = grade [i];
+  }
+  
+  
+  for(i=0;i<SIZE;i++) 
+   printf("grade[%d] = %d, score[%d] = %d\n", i, grade[i], i, score[i]);
 
   system("PAUSE");	
   return 0;
 }
+
+
+
+      
