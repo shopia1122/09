@@ -5,11 +5,11 @@
 
 int main(int argc, char *argv[])
 {
-  //5명의 학생에 대한 시험 점수 저장 배열 선언 
+  //SIZE명의 학생에 대한 시험 점수 저장 배열 선언 
   int score[SIZE];   
   int i;         // 점수를 출력하기 위한 변수 선언     
   
-  printf("5명의 점수를 입력하세요.\n");
+  printf("%d명의 점수를 입력하세요.\n", SIZE);
   
   //점수 입력 함수(반복문 활용) 
   for(i=0;i<SIZE;i++)
