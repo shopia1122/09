@@ -7,18 +7,18 @@ int main(int argc, char *argv[])
 {
   //SIZE명의 학생에 대한 시험 점수 저장 배열 선언 
   int score[SIZE];   
-  int i;         // 점수를 출력하기 위한 변수 선언     
+  int i;         // 점수를 출력하기 위한 변수 선언    
+  int avg;
+  int sum=0;   //누적을 위한 변수는 무조건 초기화 시켜줘야 한다. 안해서 평균이 계속 1234567이 나옴.  
   
-  printf("%d명의 점수를 입력하세요.\n", SIZE);
-  
-  //점수 입력 함수(반복문 활용) 
-  for(i=0;i<SIZE;i++)
+  for(i=0;i<SIZE;i++) {
+  printf("학생 성적을 입력하세요: ");
   scanf("%d", &score[i]);
+  sum += score[i];
+}
   
-  
-  //점수 화면 출력(반복문 활용)   
-  for(i=0;i<SIZE;i++)                                 // 반복을 위한 for문 
-  printf("grade[%d] = %d\n", i, score[i]);  
+  avg = sum/SIZE;
+  printf("성적 평균: %d\n", avg); 
 
   system("PAUSE");	
   return 0;
